@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
-import { CalendarPlus, Users, Sparkle, Package } from '@phosphor-icons/react/dist/ssr'
+import { CalendarPlus } from '@phosphor-icons/react/dist/ssr'
 import type { Appointment, Payment } from '@/types'
 
 function formatCurrency(amount: number) {
@@ -142,40 +142,6 @@ export default async function DashboardPage() {
         )}
       </section>
 
-      {/* Accesos rápidos */}
-      <section>
-        <h2 className="text-sm font-semibold text-[var(--color-charcoal)] mb-3">Accesos rápidos</h2>
-        <div className="grid grid-cols-2 gap-3">
-          <Link
-            href="/clientes"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl px-4 py-4 flex items-center gap-3 transition-all hover:border-[var(--color-rose-border)] active:scale-[0.98]"
-          >
-            <Users size={20} weight="light" className="text-[var(--color-rose-nude)]" />
-            <span className="text-sm font-medium text-[var(--color-charcoal)]">Clientes</span>
-          </Link>
-          <Link
-            href="/servicios"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl px-4 py-4 flex items-center gap-3 transition-all hover:border-[var(--color-rose-border)] active:scale-[0.98]"
-          >
-            <Sparkle size={20} weight="light" className="text-[var(--color-rose-nude)]" />
-            <span className="text-sm font-medium text-[var(--color-charcoal)]">Servicios</span>
-          </Link>
-          <Link
-            href="/productos"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl px-4 py-4 flex items-center gap-3 transition-all hover:border-[var(--color-rose-border)] active:scale-[0.98]"
-          >
-            <Package size={20} weight="light" className="text-[var(--color-rose-nude)]" />
-            <span className="text-sm font-medium text-[var(--color-charcoal)]">Productos</span>
-          </Link>
-          <Link
-            href="/reportes"
-            className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl px-4 py-4 flex items-center gap-3 transition-all hover:border-[var(--color-rose-border)] active:scale-[0.98]"
-          >
-            <CalendarPlus size={20} weight="light" className="text-[var(--color-rose-nude)]" />
-            <span className="text-sm font-medium text-[var(--color-charcoal)]">Reportes</span>
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }
