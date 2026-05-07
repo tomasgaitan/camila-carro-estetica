@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand palette — extraída del logo de Camila Carro */
+  --color-rose-nude: #C9A09A;
+  --color-rose-nude-hover: #BC8F89;
+  --color-rose-light: #F5E6E3;
+  --color-rose-lighter: #FDF8F6;
+  --color-rose-dark: #9B6B65;
+  --color-rose-border: #E8D5D2;
+
+  /* Neutrales */
+  --color-charcoal: #1C1917;
+  --color-charcoal-soft: #44403C;
+  --color-charcoal-muted: #78716C;
+  --color-charcoal-subtle: #A8A29E;
+
+  /* Semánticos */
+  --color-background: #FDF8F6;
+  --color-surface: #FFFFFF;
+  --color-border: #E8D5D2;
+  --color-primary: #C9A09A;
+  --color-primary-hover: #9B6B65;
+  --color-primary-foreground: #FFFFFF;
+
+  /* Estados */
+  --color-success: #6B8F71;
+  --color-success-light: #E8F0E9;
+  --color-warning: #B8860B;
+  --color-warning-light: #FDF5DC;
+  --color-error: #B85450;
+  --color-error-light: #FCEAEA;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe area para iOS */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
 }
